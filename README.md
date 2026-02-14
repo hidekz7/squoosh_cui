@@ -31,6 +31,33 @@ To develop for Squoosh:
    npm run dev
    ```
 
+# Local CUI (no Node.js)
+
+If you want to use Squoosh as a local CUI program without Node.js, use the
+Python script below. It compresses images locally using Pillow.
+
+```sh
+python -m pip install Pillow
+python cui/squoosh_cui.py input.jpg output.jpg --format jpeg --quality 75
+```
+
+For PNG optimization:
+
+```sh
+python cui/squoosh_cui.py input.png output.png --format png --optimize
+```
+
+# Local GUI (no Node.js)
+
+You can also use a lightweight GUI that wraps the CUI program. It supports
+multiple-file drag-and-drop (via `tkinterdnd2`), output folder selection, and a
+side-by-side preview for quality tuning.
+
+```sh
+python -m pip install Pillow tkinterdnd2
+python cui/squoosh_gui.py
+```
+
 # Contributing
 
 Squoosh is an open-source project that appreciates all community involvement. To contribute to the project, follow the [contribute guide](/CONTRIBUTING.md).
